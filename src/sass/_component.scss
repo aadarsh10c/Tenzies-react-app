@@ -6,3 +6,20 @@
     padding: 3.5rem 3.4rem;
     color: #2B283A;
 }
+.intro{
+    margin-bottom: 2.3rem;
+    &__head{
+        font-family: 'Karla', 'Times New Roman', Times, serif;
+        font-size: 2.6rem;
+        font-weight: 700;
+        line-height: 3rem;
+        text-align: center;
+    }
+    &__desc{
+        font-family: 'inter', 'Times New Roman', Times, serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.6rem;
+        text-align: center;
+    }
+}
