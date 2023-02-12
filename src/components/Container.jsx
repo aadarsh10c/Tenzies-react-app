@@ -1,4 +1,5 @@
 import React from "react";
+import TileGroup from './TileGroup'
 
 export default function Container (){
     return(
@@ -10,6 +11,10 @@ export default function Container (){
                     Click each die to freeze it at its current value between rolls.
                 </p>
             </header>
+            <TileGroup />
+            <a href="#" className="roll-btn">
+                ROLL
+            </a>
         </div>
     )
 }
