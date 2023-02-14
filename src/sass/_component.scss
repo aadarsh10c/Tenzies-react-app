@@ -10,6 +10,11 @@
     align-items: center;
     justify-content: space-around;
 }
+.highScore{
+    align-self: flex-end;
+    margin-top: -3rem;
+    font-family: 'Karla', 'Times New Roman', Times, serif;
+}
 .intro{
     //margin-bottom: 2.3rem;
     &__head{

@@ -3,7 +3,7 @@ import Tile from './Tile'
 
 
 export default function TileGroup( props ){
-    console.log( JSON.stringify(props))
+   // console.log( JSON.stringify(props))
 
     const tile_array = props.diceArray.map( (value) => (
         <Tile 

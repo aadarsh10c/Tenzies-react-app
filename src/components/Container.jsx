@@ -1,6 +1,7 @@
 import React from "react"
 import { nanoid } from 'nanoid'
 import TileGroup from './TileGroup'
+import Confetti from "react-confetti"
 
 
 function intializer(){
@@ -22,6 +23,7 @@ export default function Container (){
     const [ target, setTarget ] = React.useState(-1)
     const [ moves, setMoves ] = React.useState(0)
     const [ tenzies , setTenzies] = React.useState( false )
+    const [ highScore , setHighScore ] = React.useState(0)
 
     React.useEffect( () => {
         console.log('inside useeffect')
@@ -106,33 +108,10 @@ export default function Container (){
 
     )()
     
-
-    // const rollBtn = (() => {
-    //     if( counter < 10 ){
-    //         return (
-    //             <a href="#" 
-    //            className="roll-btn"
-    //            onClick={rollDice} 
-    //            >
-    //             ROLL
-    //         </a>
-    //         )
-    //     }else{
-    //         return (
-    //             <a href="#" 
-    //            className=" roll-btn roll-btn-reset"
-    //            onClick={reset} 
-    //            >
-    //             Total Moves : {moves}<br />
-    //             Click to Reset
-    //         </a>
-    //         )
-    //     }
-    // })()
-   // console.log( rollBtn )
-
     return(
         <div className="container">
+            {tenzies && <Confetti />}
+            <h3 className="highScore">HighScore: <span className="score">00</span></h3>
             <header className="intro">
                 <h2 className="intro__head">Tenzies</h2>
                 <p className="intro__desc">
