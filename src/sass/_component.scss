@@ -15,6 +15,13 @@
     margin-top: -3rem;
     font-family: 'Karla', 'Times New Roman', Times, serif;
 }
+
+.score{
+    background-color: aqua;
+    padding: .2rem 1rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    margin-left: 1rem;
+}
 .intro{
     //margin-bottom: 2.3rem;
     &__head{

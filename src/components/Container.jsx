@@ -23,10 +23,10 @@ export default function Container (){
     const [ target, setTarget ] = React.useState(-1)
     const [ moves, setMoves ] = React.useState(0)
     const [ tenzies , setTenzies] = React.useState( false )
-    const [ highScore , setHighScore ] = React.useState(0)
+    const [ highScore , setHighScore ] = React.useState( () => JSON.parse( localStorage.getItem('highScore')) || 0 )
 
     React.useEffect( () => {
-        console.log('inside useeffect')
+        //console.log('inside useeffect')
         const allSet = dice_array.every( die => die.isSet)
         let target = dice_array[0].value
         const allSame  = dice_array.every( die => die.value === target)
@@ -34,6 +34,13 @@ export default function Container (){
         allSet && allSame && setTenzies( true )
 
     },[dice_array])
+
+    React.useEffect( () => {
+        if( moves < highScore){
+            setHighScore( moves )
+            localStorage.setItem( 'highScore' , JSON.stringify( moves ) )
+        }
+    },[tenzies])
 
     function handleClick( event, id ){
         //console.log("clicked")
@@ -111,7 +118,7 @@ export default function Container (){
     return(
         <div className="container">
             {tenzies && <Confetti />}
-            <h3 className="highScore">HighScore: <span className="score">00</span></h3>
+            <h3 className="highScore">HighScore: <span className="score">{highScore}</span></h3>
             <header className="intro">
                 <h2 className="intro__head">Tenzies</h2>
                 <p className="intro__desc">
