@@ -36,7 +36,7 @@ export default function Container (){
     },[dice_array])
 
     React.useEffect( () => {
-        if( moves < highScore){
+        if( moves > highScore){
             setHighScore( moves )
             localStorage.setItem( 'highScore' , JSON.stringify( moves ) )
         }
